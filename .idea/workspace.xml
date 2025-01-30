@@ -4,41 +4,119 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a366d396-d09e-41f0-9416-4df258225a86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/git_project_find_couple.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="a366d396-d09e-41f0-9416-4df258225a86" name="Changes" comment="Первый коммит.&#10;Сделана основа проекта, на которую можно в дальнейшем опираться.">
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/backgrounds/background9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cards/card9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/menu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/background_menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2r4DzvFpDrRJ59rbESkJR1Ptlqp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;demo-version&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Getma\PycharmProjects\git_project_find_couple\data" />
+      <recent name="C:\Users\Getma\PycharmProjects\git_project_find_couple\data\cards" />
+      <recent name="C:\Users\Getma\PycharmProjects\git_project_find_couple\data\backgrounds" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="git_project_find_couple" />
       <option name="ENV_FILES" value="" />
@@ -61,6 +139,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="git_project_find_couple" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -78,6 +183,41 @@
       <option name="presentableId" value="Default" />
       <updated>1735809719996</updated>
     </task>
+    <task id="LOCAL-00001" summary="Первый коммит.&#10;Сделана основа проекта, на которую можно в дальнейшем опираться.">
+      <option name="closed" value="true" />
+      <created>1735811718670</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735811718670</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Первый коммит.&#10;Сделана основа проекта, на которую можно в дальнейшем опираться." />
+    <option name="LAST_COMMIT_MESSAGE" value="Первый коммит.&#10;Сделана основа проекта, на которую можно в дальнейшем опираться." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
