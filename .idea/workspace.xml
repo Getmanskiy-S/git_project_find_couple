@@ -4,71 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a366d396-d09e-41f0-9416-4df258225a86" name="Changes" comment="Первый коммит.&#10;Сделана основа проекта, на которую можно в дальнейшем опираться.">
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/backgrounds/background9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card27.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card29.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card31.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card33.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card34.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card35.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card37.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card39.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card41.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card42.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card43.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card44.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card49.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cards/card9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/menu.png" afterDir="false" />
+    <list default="true" id="a366d396-d09e-41f0-9416-4df258225a86" name="Changes" comment="Второй коммит.&#10;Список изменений:&#10;- добавлена папка data (Изображения делала Полина)&#10;- сделаны основные классы&#10;- сделан начальный экран (часть функций в нём реализована)">
+      <change afterPath="$PROJECT_DIR$/data/card_empty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/wrong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/background_menu.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,20 +36,23 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2r4DzvFpDrRJ59rbESkJR1Ptlqp" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;demo-version&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.main.executor": "Run",
+    "Python.tests.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "demo-version"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Getma\PycharmProjects\git_project_find_couple\data" />
@@ -191,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735811718670</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Второй коммит.&#10;Список изменений:&#10;- добавлена папка data (Изображения делала Полина)&#10;- сделаны основные классы&#10;- сделан начальный экран (часть функций в нём реализована)">
+      <option name="closed" value="true" />
+      <created>1738240109476</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738240109476</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,15 +158,17 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Первый коммит.&#10;Сделана основа проекта, на которую можно в дальнейшем опираться." />
-    <option name="LAST_COMMIT_MESSAGE" value="Первый коммит.&#10;Сделана основа проекта, на которую можно в дальнейшем опираться." />
+    <MESSAGE value="Второй коммит.&#10;Список изменений:&#10;- добавлена папка data (Изображения делала Полина)&#10;- сделаны основные классы&#10;- сделан начальный экран (часть функций в нём реализована)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Второй коммит.&#10;Список изменений:&#10;- добавлена папка data (Изображения делала Полина)&#10;- сделаны основные классы&#10;- сделан начальный экран (часть функций в нём реализована)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>127</line>
+          <line>155</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
