@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a366d396-d09e-41f0-9416-4df258225a86" name="Changes" comment="Второй коммит.&#10;Список изменений:&#10;- добавлена папка data (Изображения делала Полина)&#10;- сделаны основные классы&#10;- сделан начальный экран (часть функций в нём реализована)">
-      <change afterPath="$PROJECT_DIR$/data/card_empty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/wrong.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
+    <list default="true" id="a366d396-d09e-41f0-9416-4df258225a86" name="Changes" comment="Третий коммит.&#10;Список изменений:&#10;- изменена папка data&#10;- добавлена возможность играть с двумя парами карт&#10;- добавлена база данных (частич. функционал)">
+      <change afterPath="$PROJECT_DIR$/data/pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sound_off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sound_on.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +32,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Getmanskiy-S&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="feab44a8-6d91-436a-848c-a48f29714238" />
+        <option name="url" value="https://github.com/Getmanskiy-S/git_project_find_couple" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -143,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738240109476</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Третий коммит.&#10;Список изменений:&#10;- изменена папка data&#10;- добавлена возможность играть с двумя парами карт&#10;- добавлена база данных (частич. функционал)">
+      <option name="closed" value="true" />
+      <created>1738265317905</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738265317905</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,17 +184,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Первый коммит.&#10;Сделана основа проекта, на которую можно в дальнейшем опираться." />
     <MESSAGE value="Второй коммит.&#10;Список изменений:&#10;- добавлена папка data (Изображения делала Полина)&#10;- сделаны основные классы&#10;- сделан начальный экран (часть функций в нём реализована)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Второй коммит.&#10;Список изменений:&#10;- добавлена папка data (Изображения делала Полина)&#10;- сделаны основные классы&#10;- сделан начальный экран (часть функций в нём реализована)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>155</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Третий коммит.&#10;Список изменений:&#10;- изменена папка data&#10;- добавлена возможность играть с двумя парами карт&#10;- добавлена база данных (частич. функционал)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Третий коммит.&#10;Список изменений:&#10;- изменена папка data&#10;- добавлена возможность играть с двумя парами карт&#10;- добавлена база данных (частич. функционал)" />
   </component>
 </project>
