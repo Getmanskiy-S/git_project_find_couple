@@ -20,6 +20,26 @@ try:
         screen.blit(dr_fon, (dr_x, dr_y))
 
 
+    def load_data(id_player):
+        global name, col_victory, col_defeat, volume, difficulty, score, col_couples_cards, player_id
+        player_id = id_player
+        cur2 = con.cursor()
+        name, col_victory, col_defeat = cur2.execute("""SELECT 
+                name, col_victory, col_defeat 
+                FROM users WHERE id = ?""", (id_player,)).fetchone()
+        volume, difficulty, score, col_couples_cards = cur2.execute("""SELECT 
+                volume, difficulty, score, col_couples_cards 
+                FROM saves WHERE id = ?""", (id_player,)).fetchone()
+        cur2.close()
+
+
+    def load_music():
+        pygame.mixer.music.unload()
+        pygame.mixer.music.load(f'data/music/music{randrange(5)}.mp3')
+        pygame.mixer.music.play(-1)
+        pygame.mixer.music.set_volume(volume / 100)
+
+
     def except_hook(cls, exception, traceback):
         msg = QMessageBox()
         msg.setWindowTitle("Ошибка в интерфейсе")
@@ -28,7 +48,7 @@ try:
         msg.setStandardButtons(QMessageBox.StandardButton.Ok)
         msg.button(QMessageBox.StandardButton.Ok)
         msg.exec()
-        # sys.__excepthook__(cls, exception, traceback)
+        sys.__excepthook__(cls, exception, traceback)
 
 
     def terminate():
@@ -77,6 +97,7 @@ try:
             global volume, difficulty, col_couples_cards
             self.save_btn.setEnabled(False)
             volume = self.volume_slider.value()
+            pygame.mixer.music.set_volume(volume / 100)
             name_btn = self.buttonGroup.checkedButton().objectName()
             col_couples_cards = self.cards_slider.value()
             if name_btn == 'rb_easy':
@@ -91,6 +112,9 @@ try:
             cur.execute('''UPDATE saves SET volume = ?, difficulty = ?, col_couples_cards = ? WHERE id = ?''',
                         (volume, difficulty, col_couples_cards, player_id))
             con.commit()
+            sound_effect = pygame.mixer.Sound('data/music/confirmation.mp3')
+            sound_effect.set_volume(volume / 100)
+            sound_effect.play()
             cur.close()
             self.close()
 
@@ -139,50 +163,93 @@ try:
             name1, ok_pressed = QInputDialog.getText(self, "Запрос данных",
                                                      "Введите ваше игровое имя")
             if ok_pressed:
-                player_id = cur.execute('''SELECT id FROM users''').fetchall()
-                player_id = player_id[-1][0] + 1
-                cur.execute('''INSERT INTO users(id,name) VALUES(?, ?)''',
-                            (player_id, name1))
-                cur.execute('''INSERT INTO saves(id) VALUES(?)''',
-                            (player_id,))
-                con.commit()
-                self.update()
-                cur.close()
+                cur = con.cursor()
+                names = cur.execute('SELECT name FROM users').fetchall()
+                if (name1,) not in names:
+                    player_id = cur.execute('''SELECT id FROM users ORDER BY id ASC''').fetchall()
+                    if not player_id:
+                        player_id = 0
+                    else:
+                        player_id = player_id[-1][0] + 1
+                    cur.execute('''INSERT INTO users(id,name) VALUES(?, ?)''',
+                                (player_id, name1))
+                    cur.execute('''INSERT INTO saves(id) VALUES(?)''',
+                                (player_id,))
+                    con.commit()
+                    load_data(player_id)
+                    with open('selected_save.txt', 'w') as file1:
+                        # Запись данных в первую строку
+                        file1.write(str(player_id))  # Преобразуем целое число в строку и добавляем символ новой строки
+                    sound_effect = pygame.mixer.Sound('data/music/confirmation.mp3')
+                    sound_effect.set_volume(volume / 100)
+                    sound_effect.play()
+                    load_music()
+                    self.update()
+                    cur.close()
+                else:
+                    msg1 = QMessageBox()
+                    msg1.setWindowTitle("Ошибка ввода")
+                    msg1.setText(f"Пользователь с именем {name1} уже существует.")
+                    msg1.setIcon(QMessageBox.Icon.Information)
+                    msg1.setStandardButtons(QMessageBox.StandardButton.Ok)
+                    msg1.button(QMessageBox.StandardButton.Ok)
+                    msg1.exec()
 
         def load_account_id(self):
-            global col_victory, col_defeat, score, col_couples_cards, difficulty, volume, player_id
             # сохранение данных в БД
             idd, ok_pressed = QInputDialog.getInt(self, "Запрос данных",
                                                   "Введите id пользователя")
-            player_id = idd
             if ok_pressed:
                 cur = con.cursor()
-                col_victory, col_defeat = cur.execute('''SELECT 
-                col_victory, col_defeat FROM users WHERE id = ?''', (idd,)).fetchone()
-                score, col_couples_cards, difficulty, volume = cur.execute('''SELECT 
-                score, col_couples_cards, difficulty, volume 
-                FROM saves WHERE id = ?''', (idd,)).fetchone()
-                self.update()
+                idds = cur.execute('SELECT id FROM users').fetchall()
                 cur.close()
+                if (idd,) in idds:
+                    load_data(idd)
+                    sound_effect = pygame.mixer.Sound('data/music/confirmation.mp3')
+                    sound_effect.set_volume(volume / 100)
+                    sound_effect.play()
+                    with open('selected_save.txt', 'w') as file1:
+                        # Запись данных в первую строку
+                        file1.write(str(player_id))  # Преобразуем целое число в строку и добавляем символ новой строки
+                    load_music()
+                    self.update()
+                else:
+                    msg1 = QMessageBox()
+                    msg1.setWindowTitle("Ошибка ввода")
+                    msg1.setText(f"Вы ввели неправильный id пользователя")
+                    msg1.setIcon(QMessageBox.Icon.Information)
+                    msg1.setStandardButtons(QMessageBox.StandardButton.Ok)
+                    msg1.button(QMessageBox.StandardButton.Ok)
+                    msg1.exec()
 
         def load_account_name(self):
-            global col_victory, col_defeat, score, col_couples_cards, difficulty, volume, player_id
             # сохранение данных в БД
             name1, ok_pressed = QInputDialog.getText(self, "Запрос данных",
                                                      "Введите имя пользователя")
             if ok_pressed:
                 cur = con.cursor()
-                idd = cur.execute('SELECT id FROM users WHERE name = ?', (name1,)).fetchone()
-                idd = idd[0]
-                player_id = idd
-                col_victory, col_defeat = cur.execute('''SELECT 
-                        col_victory, col_defeat FROM users WHERE id = ?''', (idd,)).fetchone()
-                score, col_couples_cards, difficulty, volume = cur.execute('''SELECT 
-                        score, col_couples_cards, difficulty, volume 
-                        FROM saves WHERE id = ?''', (idd,)).fetchone()
-                print(col_victory, col_defeat, score, col_couples_cards, difficulty, volume, player_id)
-                self.update()
-                cur.close()
+                names = cur.execute('SELECT name FROM users').fetchall()
+                if (name1,) in names:
+                    idd = cur.execute('SELECT id FROM users WHERE name = ?', (name1,)).fetchone()
+                    cur.close()
+                    idd = idd[0]
+                    load_data(idd)
+                    sound_effect = pygame.mixer.Sound('data/music/confirmation.mp3')
+                    sound_effect.set_volume(volume / 100)
+                    sound_effect.play()
+                    with open('selected_save.txt', 'w') as file1:
+                        # Запись данных в первую строку
+                        file1.write(str(player_id))  # Преобразуем целое число в строку и добавляем символ новой строки
+                    load_music()
+                    self.update()
+                else:
+                    msg1 = QMessageBox()
+                    msg1.setWindowTitle("Ошибка ввода")
+                    msg1.setText(f"Вы ввели неправильное имя пользователя")
+                    msg1.setIcon(QMessageBox.Icon.Information)
+                    msg1.setStandardButtons(QMessageBox.StandardButton.Ok)
+                    msg1.button(QMessageBox.StandardButton.Ok)
+                    msg1.exec()
 
         def update(self):
             cur = con.cursor()
@@ -240,6 +307,10 @@ try:
 
         def update(self, *args):
             if args and args[0].type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(args[0].pos):
+                if player_id != -1:
+                    sound_effect = pygame.mixer.Sound('data/music/clicking.mp3')
+                    sound_effect.set_volume(volume / 100)
+                    sound_effect.play()
                 return True
             else:
                 return False
@@ -263,6 +334,9 @@ try:
         def update(self, *args):
             if (args and args[0].type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(args[0].pos) and
                     not (is_timer and self.image1 != 'sound_on.png')):
+                sound_effect = pygame.mixer.Sound('data/music/clicking.mp3')
+                sound_effect.set_volume(volume / 100)
+                sound_effect.play()
                 if self.file_path == self.image1:
                     self.file_path = self.image2
                 else:
@@ -339,12 +413,18 @@ try:
                     else:
                         koef = 500
                     if couple[0].file_path == couple[1].file_path:
+                        sound_effect = pygame.mixer.Sound('data/music/right_answer.mp3')
+                        sound_effect.set_volume(volume / 100)
+                        sound_effect.play()
                         pygame.time.set_timer(pygame.USEREVENT, koef // 2)
                         TrueOrFalse(temporary_sprites, True, couple[0].rect.x, couple[0].rect.y,
                                     self.cl_weight, self.cl_height)
                         TrueOrFalse(temporary_sprites, True, couple[1].rect.x, couple[1].rect.y,
                                     self.cl_weight, self.cl_height)
                     else:
+                        sound_effect = pygame.mixer.Sound('data/music/wrong_answer.mp3')
+                        sound_effect.set_volume(volume / 100)
+                        sound_effect.play()
                         pygame.time.set_timer(pygame.USEREVENT, koef)
                         TrueOrFalse(temporary_sprites, False, couple[0].rect.x, couple[0].rect.y,
                                     self.cl_weight, self.cl_height)
@@ -353,6 +433,8 @@ try:
 
 
     def start_screen():
+        if player_id != -1:
+            load_music()
         menu.image = load_image('menu.png')
         Button(button_sprites, cl_x=100, cl_y=20, cl_height=150)
         Button(button_sprites, cl_x=100, cl_y=180, cl_height=150)
@@ -451,6 +533,7 @@ try:
 
 
     def end_screen():
+        pygame.mixer.music.unload()
         global seconds_left, col_victory, col_defeat, important_sprites, score
         pygame.time.set_timer(pygame.USEREVENT + 1, 0)
         button_sprites.empty()
@@ -465,10 +548,16 @@ try:
         if seconds_left < 0:
             seconds_left = 0
         if seconds_left == 0:
+            sound_effect = pygame.mixer.Sound('data/music/game_over.mp3')
+            sound_effect.set_volume(volume / 100)
+            sound_effect.play()
             MobileText(text_sprites, text='Вы проиграли', cl_x=150, cl_y=50, text_size=150,
                        color='black', outline_color='white')
             col_defeat += 1
         else:
+            sound_effect = pygame.mixer.Sound('data/music/victory.mp3')
+            sound_effect.set_volume(volume / 100)
+            sound_effect.play()
             score += (col_couples_cards * 2) ** 2
             MobileText(text_sprites, text='Вы выиграли!', cl_x=150, cl_y=50, text_size=150,
                        color='black', outline_color='white', outline_width=5)
@@ -535,7 +624,12 @@ try:
 
         # введение переменных
         sys.excepthook = except_hook
-        player_id = -1  # id игрока
+        with open('selected_save.txt', 'r') as file:
+            # Чтение первой строки
+            first_line = file.readline().strip()  # Удаляем лишние пробелы и символы новой строки
+
+            # Преобразование строки в целое число
+            player_id = int(first_line)
         seconds_left = 500  # время до поражения, 1 seconds_left = 100 милисекунд
         important_sprites = []  # спрайт с таймером и с счётчиком очков
         couple = []  # пара карточек
@@ -543,18 +637,12 @@ try:
         is_stop = True  # остановлено ли время
         app = QApplication(sys.argv)
         con = sqlite3.connect("users.db")
-
+        if player_id != -1:
+            load_data(player_id)
         start_screen()
 
-        # Подключение к БД
-        cur1 = con.cursor()
-        name, col_victory, col_defeat = cur1.execute("""SELECT 
-        name, col_victory, col_defeat 
-        FROM users WHERE id = ?""", (player_id,)).fetchone()
-        volume, difficulty, score, col_couples_cards = cur1.execute("""SELECT 
-        volume, difficulty, score, col_couples_cards 
-        FROM saves WHERE id = ?""", (player_id,)).fetchone()
-        cur1.close()
+        # Загрузка данных из БД
+        load_data(player_id)
 
         # цикл уровня и меню
         load_level()
@@ -569,29 +657,41 @@ try:
                     for s1 in button_sprites:
                         if s1.update(event1):
                             if i1 == 0:
-                                if score >= 10000:
+                                if score >= 10000 and not is_timer and not is_stop:
                                     pygame.time.set_timer(pygame.USEREVENT + 2, 1000)
                                     score -= 10000
-                                    cur = con.cursor()
-                                    cur.execute('''UPDATE saves SET score = ? WHERE id = ?''',
-                                                (score, player_id))
+                                    important_sprites[1].text = f'Кол-во очков: {score}'
+                                    cur1 = con.cursor()
+                                    cur1.execute('''UPDATE saves SET score = ? WHERE id = ?''',
+                                                 (score, player_id))
                                     con.commit()
-                                    cur.close()
+                                    cur1.close()
                                     for s3 in cards_sprites:
                                         s3.file_path = s3.image_card
                                         s3.image = pygame.transform.scale(load_image(s3.file_path),
                                                                           (s3.cl_weight, s3.cl_height))
+                                elif is_stop or is_timer:
+                                    msg1 = QMessageBox()
+                                    msg1.setWindowTitle("Ошибка")
+                                    msg1.setText(f"Нельзя использовать подсказку, когда игра приостановленна")
+                                    msg1.setIcon(QMessageBox.Icon.Information)
+                                    msg1.setStandardButtons(QMessageBox.StandardButton.Ok)
+                                    msg1.button(QMessageBox.StandardButton.Ok)
+                                    msg1.exec()
                                 else:
                                     msg1 = QMessageBox()
                                     msg1.setWindowTitle("Ошибка")
                                     msg1.setText(f"Недостаточно средств")
-                                    msg1.setIcon(QMessageBox.Icon.Question)
+                                    msg1.setIcon(QMessageBox.Icon.Information)
                                     msg1.setStandardButtons(QMessageBox.StandardButton.Ok)
                                     msg1.button(QMessageBox.StandardButton.Ok)
                                     msg1.exec()
                                     break
                             elif i1 == 1:
-                                pass
+                                if s1.file_path == s1.image1:
+                                    pygame.mixer.music.unpause()
+                                else:
+                                    pygame.mixer.music.pause()
                             else:
                                 if s1.file_path == s1.image1:
                                     is_stop = True
@@ -628,12 +728,12 @@ try:
                         end_screen()
                         start_screen()
                         load_level()
-                if event1.type == pygame.USEREVENT + 2 and not is_timer and not is_stop:
+                if event1.type == pygame.USEREVENT + 2:
                     for s3 in cards_sprites:
                         pygame.time.set_timer(pygame.USEREVENT + 2, 0)
                         s3.file_path = 'card_empty.png'
                         s3.image = pygame.transform.scale(load_image(s3.file_path),
-                                                            (s3.cl_weight, s3.cl_height))
+                                                          (s3.cl_weight, s3.cl_height))
             if not cards_sprites:
                 end_screen()
                 start_screen()
@@ -647,11 +747,11 @@ try:
             clock.tick(fps)
         pygame.quit()
         con.close()
-except Exception:
+except Exception as e:
     msg1 = QMessageBox()
     msg1.setWindowTitle("Неизвестная ошибка")
-    msg1.setText(f"Произошла непредвиденная ошибка. Приносим Извинения!")
-    msg1.setIcon(QMessageBox.Icon.Warning)
+    msg1.setText(f"Произошла непредвиденная ошибка: {e}. Приносим Извинения!")
+    msg1.setIcon(QMessageBox.Icon.Critical)
     msg1.setStandardButtons(QMessageBox.StandardButton.Ok)
     msg1.button(QMessageBox.StandardButton.Ok)
     msg1.exec()
