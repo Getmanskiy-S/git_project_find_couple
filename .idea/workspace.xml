@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a366d396-d09e-41f0-9416-4df258225a86" name="Changes" comment="Пятый коммит.&#10;Список изменений:&#10;- добавлена возможность использовать подсказки&#10;- добавлена полная совместимость с бд&#10;- добавлено средство устранения ошибок">
-      <change afterPath="$PROJECT_DIR$/data/music/change.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/music/scrolling.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="a366d396-d09e-41f0-9416-4df258225a86" name="Changes" comment="Седьмой коммит.&#10;Список изменений:&#10;- исправленны ошибки&#10;- доделана музыкальная часть игры">
+      <change afterPath="$PROJECT_DIR$/dist/main.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/main.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/main.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738437654161</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Седьмой коммит.&#10;Список изменений:&#10;- исправленны ошибки&#10;- доделана музыкальная часть игры">
+      <option name="closed" value="true" />
+      <created>1738672518416</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738672518417</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,6 +222,7 @@
     <MESSAGE value="Четвёртый коммит.&#10;Список изменений:&#10;- добавлена возможность играть с произвольным количеством карт (до 100)&#10;- добавлена система очков&#10;- добавлена возможность приостановить игру&#10;(все параметры пока не сохраняются в БД)" />
     <MESSAGE value="Пятый коммит.&#10;Список изменений:&#10;- добавлена возможность использовать подсказки&#10;- добавлена полная совместимость с бд&#10;- добавлено средство устранения ошибок&#10;(пока нет музыки)" />
     <MESSAGE value="коммит&#10;произошла ошибка игры, поэтому ещё один коммит" />
-    <option name="LAST_COMMIT_MESSAGE" value="коммит&#10;произошла ошибка игры, поэтому ещё один коммит" />
+    <MESSAGE value="Седьмой коммит.&#10;Список изменений:&#10;- исправленны ошибки&#10;- доделана музыкальная часть игры" />
+    <option name="LAST_COMMIT_MESSAGE" value="Седьмой коммит.&#10;Список изменений:&#10;- исправленны ошибки&#10;- доделана музыкальная часть игры" />
   </component>
 </project>
