@@ -85,5 +85,5 @@
 
 # ГДЕ СКАЧАТЬ?
 
-Скачать игру можно в [репозитории по ссылке](https://github.com/Getmanskiy-S/git_project_find_couple).
+Скачать игру можно в [репозитории в ветке release_version](https://github.com/Getmanskiy-S/git_project_find_couple/tree/release-version).
 Там же можно посмотреть подробнее информацию об создании игры.
